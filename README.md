@@ -274,13 +274,3 @@ pydantic>=2.7.0         Request/response validation
 python-dotenv>=1.0.0    .env file loading
 reportlab>=4.2.0        PDF generation
 tavily-python>=0.3.0    Tavily AI search SDK
-```
-
----
-
-## Notes
-
-- The `reports/` folder is created automatically on first run
-- Claude model used: `claude-opus-4-5` — this can be changed in `agent.py`
-- All 5 data collectors handle errors individually — if one fails, the rest still contribute to the report
-- For production deployments, consider adding: authentication middleware, rate limiting, cloud file storage (e.g. AWS S3 for PDFs), and an async job queue (Celery + Redis) for long-running report generation
